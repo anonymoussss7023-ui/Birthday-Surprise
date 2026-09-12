@@ -1,21 +1,37 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport"
-      content="width=device-width, initial-scale=1.0,
-               maximum-scale=1.0, user-scalable=no">
+      content="width=device-width,
+               initial-scale=1.0,
+               maximum-scale=1.0,
+               user-scalable=no">
 
 <title>Birthday Surprise</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- GOOGLE FONTS -->
+
+<link rel="preconnect"
+      href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Great+Vibes&display=swap"
       rel="stylesheet">
 
+
 <style>
+
+/* =========================================================
+   BASIC RESET
+========================================================= */
 
 * {
     box-sizing: border-box;
@@ -35,15 +51,14 @@ body {
 }
 
 
-/* =========================
+/* =========================================================
    GENERAL PAGE
-========================= */
+========================================================= */
 
 .page {
     min-height: 100vh;
     width: 100%;
     position: relative;
-    overflow: hidden;
 
     background:
         radial-gradient(
@@ -75,20 +90,27 @@ body {
     min-height: 100vh;
     margin: auto;
     position: relative;
-    padding: 55px 28px 70px;
+
+    padding:
+        55px 28px 70px;
 }
 
 
-/* =========================
-   DECORATIVE HEARTS
-========================= */
+/* =========================================================
+   FLOATING HEARTS
+========================================================= */
 
 .heart {
     position: absolute;
+
     font-size: 28px;
+
     opacity: .65;
+
     pointer-events: none;
-    animation: floatHeart 6s ease-in-out infinite;
+
+    animation:
+        floatHeart 6s ease-in-out infinite;
 }
 
 .h1 {
@@ -122,61 +144,81 @@ body {
 
 @keyframes floatHeart {
 
-    0%,100% {
-        transform: translateY(0) rotate(-5deg);
+    0%, 100% {
+        transform:
+            translateY(0)
+            rotate(-5deg);
     }
 
     50% {
-        transform: translateY(-12px) rotate(5deg);
+        transform:
+            translateY(-12px)
+            rotate(5deg);
     }
 
 }
 
 
-/* =========================
-   TOP LABELS
-========================= */
+/* =========================================================
+   FONTS / HEADINGS
+========================================================= */
 
 .script {
-    font-family: "Great Vibes", cursive;
+    font-family:
+        "Great Vibes",
+        cursive;
+
     font-weight: 400;
 }
 
 .top-script {
     text-align: center;
+
     font-size: 25px;
+
     color: #8b3c42;
+
     margin-bottom: 18px;
 }
 
 .title {
     text-align: center;
-    font-size: clamp(38px, 9vw, 56px);
+
+    font-size:
+        clamp(38px, 9vw, 56px);
+
     line-height: 1;
+
     font-weight: 700;
+
     color: #5a1820;
 }
 
 .line {
     width: 155px;
-    height: 2px;
-    margin: 26px auto 40px;
 
-    background: linear-gradient(
-        90deg,
-        transparent,
-        #c5a066,
-        transparent
-    );
+    height: 2px;
+
+    margin:
+        26px auto 40px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #c5a066,
+            transparent
+        );
 }
 
 
-/* =========================
+/* =========================================================
    BUTTONS
-========================= */
+========================================================= */
 
 .btn {
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
 
@@ -185,22 +227,28 @@ body {
 
     padding: 12px 28px;
 
-    border: 2px solid #741827;
+    border:
+        2px solid #741827;
 
     background: #7c172b;
+
     color: white;
 
     font-family: Arial, sans-serif;
+
     font-size: 19px;
+
     letter-spacing: 1px;
 
     cursor: pointer;
+
     text-decoration: none;
 
     position: relative;
 
     box-shadow:
-        0 12px 25px rgba(82,25,31,.22);
+        0 12px 25px
+        rgba(82,25,31,.22);
 
     transition:
         transform .2s ease,
@@ -214,48 +262,58 @@ body {
 
     inset: 6px;
 
-    border: 1px solid rgba(255,255,255,.7);
+    border:
+        1px solid
+        rgba(255,255,255,.7);
 
     pointer-events: none;
 }
 
 .btn:hover {
     transform: translateY(-2px);
+
     filter: brightness(1.08);
 }
 
 .btn.light {
     background: transparent;
+
     color: #641725;
+
     box-shadow: none;
 }
 
 .center {
     display: flex;
+
     justify-content: center;
 }
 
 
-/* =========================
+/* =========================================================
    PAGE 2 - CAKE
-========================= */
+========================================================= */
 
 .cake-page {
     display: flex;
+
     align-items: center;
     justify-content: center;
 }
 
 .cake-wrap {
     width: 100%;
+
     text-align: center;
 }
 
 .cake {
     width: 300px;
+
     max-width: 85vw;
 
-    margin: 30px auto 40px;
+    margin:
+        30px auto 40px;
 
     position: relative;
 }
@@ -266,11 +324,12 @@ body {
 
     margin: auto;
 
-    background: repeating-linear-gradient(
-        to bottom,
-        #fff 0 12px,
-        #e9d6a4 12px 20px
-    );
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            #fff 0 12px,
+            #e9d6a4 12px 20px
+        );
 
     position: relative;
 
@@ -281,34 +340,42 @@ body {
     position: absolute;
 
     top: -50px;
+
     left: 50%;
 
-    transform: translateX(-50%);
+    transform:
+        translateX(-50%);
 
     font-size: 38px;
 }
 
 .cake-top {
     height: 65px;
+
     width: 190px;
 
     margin: auto;
 
-    border-radius: 50% 50% 12px 12px;
+    border-radius:
+        50% 50% 12px 12px;
 
     background: #faf5e9;
 
-    border-bottom: 7px solid #d8c28d;
+    border-bottom:
+        7px solid #d8c28d;
 
     box-shadow:
-        0 10px 18px rgba(72,40,30,.16);
+        0 10px 18px
+        rgba(72,40,30,.16);
 }
 
 .cake-mid {
     width: 250px;
+
     height: 85px;
 
-    margin: -3px auto 0;
+    margin:
+        -3px auto 0;
 
     background:
         linear-gradient(
@@ -316,17 +383,21 @@ body {
             #d6a94e
         );
 
-    border-radius: 12px 12px 3px 3px;
+    border-radius:
+        12px 12px 3px 3px;
 
     box-shadow:
-        0 14px 22px rgba(72,40,30,.20);
+        0 14px 22px
+        rgba(72,40,30,.20);
 }
 
 .cake-bottom {
     width: 300px;
+
     height: 100px;
 
-    margin: -1px auto 0;
+    margin:
+        -1px auto 0;
 
     background:
         linear-gradient(
@@ -334,10 +405,12 @@ body {
             #690f27
         );
 
-    border-radius: 12px 12px 7px 7px;
+    border-radius:
+        12px 12px 7px 7px;
 
     box-shadow:
-        0 18px 30px rgba(72,20,25,.30);
+        0 18px 30px
+        rgba(72,20,25,.30);
 
     position: relative;
 }
@@ -348,6 +421,7 @@ body {
     position: absolute;
 
     top: 9px;
+
     left: 0;
     right: 0;
 
@@ -363,6 +437,7 @@ body {
 
 .birthday-text {
     font-size: 42px;
+
     font-weight: 700;
 
     color: #681723;
@@ -371,9 +446,9 @@ body {
 }
 
 
-/* =========================
+/* =========================================================
    PAGE 3
-========================= */
+========================================================= */
 
 .accept-page {
     text-align: center;
@@ -384,7 +459,8 @@ body {
 }
 
 .accept-title {
-    font-size: clamp(38px, 9vw, 53px);
+    font-size:
+        clamp(38px, 9vw, 53px);
 
     line-height: 1.05;
 
@@ -396,7 +472,8 @@ body {
 .big-heart {
     font-size: 48px;
 
-    margin: 22px 0 55px;
+    margin:
+        22px 0 55px;
 }
 
 .choice {
@@ -405,13 +482,29 @@ body {
     gap: 26px;
 
     justify-content: center;
+
     align-items: center;
 }
 
 
-/* =========================
-   PAGE 4 / GIFT CARDS
-========================= */
+/* =========================================================
+   PAGE 4 - THREE LITTLE GIFTS
+========================================================= */
+
+.gifts-page {
+    min-height: 100vh;
+
+    padding-bottom: 80px;
+}
+
+.gifts-page .page-inner {
+    min-height: auto;
+
+    padding-bottom: 90px;
+}
+
+
+/* GIFT CARDS */
 
 .cards {
     display: flex;
@@ -424,45 +517,51 @@ body {
 }
 
 .card {
-    background: rgba(255,252,246,.88);
+    background:
+        rgba(255,252,246,.90);
 
     border-radius: 9px;
 
     min-height: 265px;
 
-    padding: 38px 22px 30px;
+    padding:
+        38px 22px 30px;
 
     text-align: center;
 
     box-shadow:
-        0 18px 32px rgba(91,61,44,.15);
+        0 18px 32px
+        rgba(91,61,44,.15);
 
     border:
-        1px solid rgba(205,176,128,.25);
+        1px solid
+        rgba(205,176,128,.25);
 }
 
 
-/* Cards are now clickable */
+/* CLICKABLE GIFT CARD */
 
 .gift-card {
     cursor: pointer;
 
     transition:
-        transform .2s ease,
-        box-shadow .2s ease;
+        transform .22s ease,
+        box-shadow .22s ease;
 }
 
 .gift-card:hover {
-    transform: translateY(-4px);
+    transform:
+        translateY(-4px);
 
     box-shadow:
-        0 22px 38px rgba(91,61,44,.22);
+        0 22px 38px
+        rgba(91,61,44,.22);
 }
 
 .gift-card:active {
-    transform: scale(.97);
+    transform:
+        scale(.98);
 }
-
 
 .card-icon {
     font-size: 55px;
@@ -480,7 +579,8 @@ body {
 
     color: #542029;
 
-    margin: 18px 0 10px;
+    margin:
+        18px 0 10px;
 }
 
 .card p {
@@ -492,21 +592,141 @@ body {
 }
 
 
-/* =========================
-   PAGE 5 - LETTER
-========================= */
+/* =========================================================
+   GIFT POPUP BACKGROUND
+========================================================= */
 
-.letter-page {
-    background: #f8f6ee;
+.gift-popup {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding:
+        22px 16px;
+
+    background:
+        rgba(79,44,47,.68);
+
+    backdrop-filter:
+        blur(5px);
+
+    -webkit-backdrop-filter:
+        blur(5px);
 }
 
-.envelope {
+.gift-popup.show {
+    display: flex;
+}
+
+
+/* =========================================================
+   COMMON POPUP CARD
+========================================================= */
+
+.gift-popup-card {
+    width: min(
+        100%,
+        590px
+    );
+
+    max-height: 92vh;
+
+    overflow-y: auto;
+
+    position: relative;
+
+    background:
+        #fffdf8;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 25px 60px
+        rgba(40,20,20,.35);
+
+    animation:
+        popupOpen .28s ease;
+}
+
+@keyframes popupOpen {
+
+    from {
+        opacity: 0;
+
+        transform:
+            scale(.92)
+            translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   POPUP CLOSE BUTTON
+========================================================= */
+
+.popup-close {
+    position: absolute;
+
+    top: 13px;
+    right: 17px;
+
+    z-index: 20;
+
+    width: 40px;
+    height: 40px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #5b242d;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 38px;
+
+    font-weight: 300;
+
+    line-height: 40px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   PAGE 5 STYLE - LETTER POPUP
+========================================================= */
+
+.letter-popup-card {
+    padding:
+        52px 25px 35px;
+}
+
+.popup-envelope {
     width: 350px;
-    max-width: 88vw;
 
-    height: 285px;
+    max-width: 82%;
 
-    margin: 0 auto 40px;
+    height: 245px;
+
+    margin:
+        0 auto 38px;
 
     background:
         linear-gradient(
@@ -520,7 +740,8 @@ body {
     position: relative;
 
     box-shadow:
-        0 20px 35px rgba(50,20,20,.28);
+        0 20px 35px
+        rgba(50,20,20,.28);
 
     display: flex;
 
@@ -528,7 +749,7 @@ body {
     justify-content: center;
 }
 
-.envelope::before {
+.popup-envelope::before {
     content: "";
 
     position: absolute;
@@ -546,7 +767,7 @@ body {
         105px solid #85162d;
 }
 
-.envelope-heart {
+.popup-envelope-heart {
     position: relative;
 
     z-index: 2;
@@ -554,21 +775,22 @@ body {
     font-size: 44px;
 }
 
-.letter-box {
-    background: #faf5ea;
+.popup-letter-box {
+    background:
+        #faf5ea;
 
     border:
         2px solid #e3cfac;
 
-    padding: 75px 28px 60px;
-
-    margin: auto;
+    padding:
+        48px 28px 42px;
 
     box-shadow:
-        0 8px 20px rgba(81,54,39,.08);
+        0 8px 20px
+        rgba(81,54,39,.08);
 }
 
-.letter-text {
+.popup-letter-text {
     font-size: 30px;
 
     line-height: 1.55;
@@ -579,62 +801,47 @@ body {
 }
 
 
-/* =========================
-   PHOTO PAGES
-========================= */
+/* =========================================================
+   PAGE 6 STYLE - ROSES POPUP
+========================================================= */
 
-.photo-card {
-    background: #fffdf7;
+.roses-popup-card {
+    padding:
+        60px 35px 48px;
 
-    border-radius: 13px;
-
-    padding: 30px 18px 42px;
-
-    width: 100%;
-
-    max-width: 530px;
-
-    margin: 40px auto;
-
-    box-shadow:
-        0 20px 40px rgba(76,47,43,.22);
-
-    text-align: center;
+    background:
+        #fffdf8;
 }
 
-.photo-frame {
+.roses-photo-frame {
     width: 100%;
 
-    max-width: 440px;
+    max-width: 480px;
 
-    margin: auto;
+    margin:
+        25px auto 30px;
 
     background: white;
 
-    padding: 9px;
+    padding: 10px;
 
     box-shadow:
-        0 6px 14px rgba(0,0,0,.12);
+        0 6px 14px
+        rgba(0,0,0,.12);
 }
 
-.photo-frame img {
+.roses-photo-frame img {
     width: 100%;
 
     display: block;
 
+    aspect-ratio: 16 / 9;
+
     object-fit: cover;
 }
 
-.photo-landscape {
-    aspect-ratio: 16 / 9;
-}
-
-.photo-portrait {
-    aspect-ratio: 4 / 5;
-}
-
-.photo-caption {
-    font-size: 28px;
+.roses-caption {
+    font-size: 30px;
 
     line-height: 1.35;
 
@@ -642,85 +849,40 @@ body {
 
     font-weight: 600;
 
-    margin: 28px 15px 0;
-
     color: #4a2025;
+
+    text-align: left;
+
+    margin:
+        0 auto;
+
+    max-width: 480px;
 }
 
 
-/* =========================
-   PAGE 6 MODAL STYLE
-========================= */
+/* =========================================================
+   PAGE 8 STYLE - SURPRISE POPUP
+========================================================= */
 
-.modal-page {
-    background:
-        linear-gradient(
-            rgba(92,49,52,.68),
-            rgba(92,49,52,.68)
-        ),
-        #9c7675;
-
-    display: flex;
-
-    align-items: center;
+.surprise-popup-card {
+    padding:
+        58px 45px 45px;
 }
 
-.modal-card {
-    background: #fffdf8;
-
-    border-radius: 16px;
-
+.surprise-photo-frame {
     width: 100%;
 
-    padding: 80px 30px 60px;
+    max-width: 400px;
 
-    text-align: center;
+    margin:
+        55px auto 25px;
 
-    position: relative;
+    background: white;
 
-    box-shadow:
-        0 20px 50px rgba(40,20,20,.3);
+    padding: 9px;
 }
 
-.close {
-    position: absolute;
-
-    right: 25px;
-    top: 20px;
-
-    font-family: Arial,sans-serif;
-
-    font-size: 44px;
-
-    font-weight: 200;
-
-    color: #5b242d;
-}
-
-.modal-card .photo-frame {
-    margin-bottom: 30px;
-}
-
-
-/* =========================
-   PAGE 8
-========================= */
-
-.single-memory {
-    background: #fffdf8;
-
-    border-radius: 13px;
-
-    padding: 70px 28px 45px;
-
-    max-width: 455px;
-
-    margin: auto;
-
-    text-align: center;
-}
-
-.single-memory img {
+.surprise-photo-frame img {
     width: 100%;
 
     display: block;
@@ -730,23 +892,34 @@ body {
     object-fit: cover;
 }
 
-.single-memory p {
-    margin-top: 25px;
-
+.surprise-caption {
     font-size: 27px;
 
     line-height: 1.35;
 
     font-style: italic;
+
+    text-align: center;
+
+    color: #4a2025;
+
+    max-width: 420px;
+
+    margin:
+        0 auto;
 }
 
 
-/* =========================
-   PAGE 10 / 11 MEMORIES
-========================= */
+/* =========================================================
+   MEMORIES PAGE 10 / 11
+========================================================= */
 
 .memory-page {
     padding-bottom: 90px;
+}
+
+.memory-page .page-inner {
+    min-height: auto;
 }
 
 .memory-grid {
@@ -758,15 +931,18 @@ body {
 }
 
 .memory-card {
-    background: #fffdf8;
+    background:
+        #fffdf8;
 
-    padding: 14px 14px 24px;
+    padding:
+        14px 14px 24px;
 
     border:
         2px solid #d7b77d;
 
     box-shadow:
-        0 15px 25px rgba(76,52,42,.18);
+        0 15px 25px
+        rgba(76,52,42,.18);
 
     text-align: center;
 }
@@ -780,159 +956,30 @@ body {
 }
 
 .memory-card.landscape img {
-    aspect-ratio: 16/9;
+    aspect-ratio: 16 / 9;
 }
 
 .memory-card.portrait img {
-    aspect-ratio: 4/5;
+    aspect-ratio: 4 / 5;
 }
 
 .memory-card p {
-    margin: 18px 12px 0;
+    margin:
+        18px 12px 0;
 
     font-size: 25px;
 
     line-height: 1.35;
 
     font-style: italic;
+
+    color: #442025;
 }
 
 
-/* =====================================================
-   GIFT POPUPS
-===================================================== */
-
-.gift-popup {
-    position: fixed;
-
-    inset: 0;
-
-    background:
-        rgba(35, 12, 18, .72);
-
-    display: none;
-
-    align-items: center;
-    justify-content: center;
-
-    padding: 25px;
-
-    z-index: 9999;
-
-    backdrop-filter: blur(4px);
-}
-
-.gift-popup.show {
-    display: flex;
-}
-
-.gift-popup-box {
-    width: min(100%, 500px);
-
-    max-height: 90vh;
-
-    overflow-y: auto;
-
-    background: #fffdf8;
-
-    border-radius: 16px;
-
-    padding: 45px 25px 35px;
-
-    text-align: center;
-
-    position: relative;
-
-    box-shadow:
-        0 25px 60px rgba(0,0,0,.35);
-
-    animation:
-        popupIn .3s ease;
-}
-
-@keyframes popupIn {
-
-    from {
-        opacity: 0;
-
-        transform:
-            scale(.9)
-            translateY(15px);
-    }
-
-    to {
-        opacity: 1;
-
-        transform:
-            scale(1)
-            translateY(0);
-    }
-
-}
-
-.popup-close {
-    position: absolute;
-
-    top: 10px;
-    right: 17px;
-
-    border: none;
-
-    background: none;
-
-    font-size: 36px;
-
-    color: #641725;
-
-    cursor: pointer;
-
-    line-height: 1;
-}
-
-.popup-icon {
-    font-size: 55px;
-
-    margin-bottom: 15px;
-}
-
-.popup-title {
-    font-size: 34px;
-
-    color: #641725;
-
-    margin-bottom: 20px;
-}
-
-.popup-text {
-    font-family:
-        "Great Vibes",
-        cursive;
-
-    font-size: 34px;
-
-    line-height: 1.35;
-
-    color: #542029;
-}
-
-.popup-photo {
-    width: 100%;
-
-    max-height: 65vh;
-
-    object-fit: contain;
-
-    display: block;
-
-    margin: 10px auto 20px;
-
-    border-radius: 8px;
-}
-
-
-/* =========================
-   PAGE 12
-========================= */
+/* =========================================================
+   PAGE 12 - FINAL
+========================================================= */
 
 .final-page {
     background:
@@ -953,6 +1000,7 @@ body {
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 }
 
@@ -965,7 +1013,8 @@ body {
 }
 
 .final-love {
-    font-size: clamp(43px, 11vw, 68px);
+    font-size:
+        clamp(43px, 11vw, 68px);
 
     font-weight: 700;
 
@@ -973,7 +1022,8 @@ body {
 }
 
 .final-birthday {
-    font-size: clamp(29px, 7vw, 43px);
+    font-size:
+        clamp(29px, 7vw, 43px);
 
     font-weight: 700;
 
@@ -992,49 +1042,51 @@ body {
 }
 
 
-/* =========================
+/* =========================================================
    PAGE NUMBER
-========================= */
+========================================================= */
 
 .page-number {
     position: absolute;
 
-    top: 18px;
-    right: 16px;
+    top: 24px;
+    right: 22px;
 
     background:
-        rgba(62,54,55,.55);
+        rgba(62,54,55,.72);
 
     color: white;
 
-    padding: 7px 11px;
+    padding:
+        8px 12px;
 
-    border-radius: 20px;
+    border-radius: 22px;
 
-    font-family: Arial,sans-serif;
+    font-family:
+        Arial,
+        sans-serif;
 
-    font-size: 12px;
-
-    font-weight: 500;
+    font-size: 13px;
 
     z-index: 20;
 }
 
 
-/* =========================
-   NEXT NAV
-========================= */
+/* =========================================================
+   NEXT AREA
+========================================================= */
 
 .next-area {
     text-align: center;
 
-    margin: 35px 0 15px;
+    margin:
+        35px 0 15px;
 }
 
 
-/* =========================
+/* =========================================================
    RESPONSIVE
-========================= */
+========================================================= */
 
 @media(max-width:420px) {
 
@@ -1055,10 +1107,6 @@ body {
         min-height: 245px;
     }
 
-    .letter-text {
-        font-size: 26px;
-    }
-
     .birthday-text {
         font-size: 36px;
     }
@@ -1067,22 +1115,75 @@ body {
         transform: scale(.88);
 
         margin-top: 0;
+
         margin-bottom: 20px;
     }
 
-    .photo-caption,
-    .single-memory p,
+    .popup-letter-text {
+        font-size: 25px;
+    }
+
+    .popup-envelope {
+        height: 220px;
+    }
+
+    .popup-envelope::before {
+        border-left-width: 125px;
+        border-right-width: 125px;
+        border-top-width: 90px;
+    }
+
+    .roses-popup-card {
+        padding-left: 22px;
+        padding-right: 22px;
+    }
+
+    .roses-caption {
+        font-size: 24px;
+    }
+
+    .surprise-popup-card {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .surprise-photo-frame {
+        margin-top: 40px;
+    }
+
+    .surprise-caption {
+        font-size: 23px;
+    }
+
     .memory-card p {
         font-size: 23px;
     }
 
-    .popup-text {
-        font-size: 30px;
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media(max-width:360px) {
+
+    .popup-letter-text {
+        font-size: 23px;
+    }
+
+    .roses-caption {
+        font-size: 22px;
+    }
+
+    .surprise-caption {
+        font-size: 21px;
     }
 
 }
 
 </style>
+
 </head>
 
 
@@ -1091,13 +1192,16 @@ body {
 
 <!-- =========================================================
      PAGE 1
+     KEEPING YOUR EXISTING PAGE 1
 ========================================================= -->
 
-<section class="page" id="page1">
+<section class="page"
+         id="page1">
 
     <div class="page-number">
         1/12
     </div>
+
 
     <div class="page-inner"
          style="
@@ -1143,22 +1247,37 @@ body {
      PAGE 2
 ========================================================= -->
 
-<section class="page cake-page" id="page2">
+<section class="page cake-page"
+         id="page2">
 
     <div class="page-number">
         2/12
     </div>
 
-    <span class="heart h1">🩷</span>
-    <span class="heart h2">🤍</span>
-    <span class="heart h3">🩷</span>
-    <span class="heart h4">🩷</span>
+
+    <span class="heart h1">
+        🩷
+    </span>
+
+    <span class="heart h2">
+        🤍
+    </span>
+
+    <span class="heart h3">
+        🩷
+    </span>
+
+    <span class="heart h4">
+        🩷
+    </span>
+
 
     <div class="page-inner cake-wrap">
 
         <div class="script top-script">
             A little something for
         </div>
+
 
         <div class="cake">
 
@@ -1178,9 +1297,11 @@ body {
 
         </div>
 
+
         <div class="birthday-text">
             Happy Birthday 🎉
         </div>
+
 
         <button class="btn"
                 onclick="goTo('page3')">
@@ -1199,16 +1320,30 @@ body {
      PAGE 3
 ========================================================= -->
 
-<section class="page accept-page" id="page3">
+<section class="page accept-page"
+         id="page3">
 
     <div class="page-number">
         3/12
     </div>
 
-    <span class="heart h1">🩷</span>
-    <span class="heart h2">🤍</span>
-    <span class="heart h3">🩷</span>
-    <span class="heart h4">🩷</span>
+
+    <span class="heart h1">
+        🩷
+    </span>
+
+    <span class="heart h2">
+        🤍
+    </span>
+
+    <span class="heart h3">
+        🩷
+    </span>
+
+    <span class="heart h4">
+        🩷
+    </span>
+
 
     <div class="page-inner">
 
@@ -1216,15 +1351,19 @@ body {
             Before we continue
         </div>
 
+
         <h1 class="accept-title">
             Please Accept My Gift
         </h1>
+
 
         <div class="big-heart">
             ❤️
         </div>
 
+
         <div class="line"></div>
+
 
         <div class="choice">
 
@@ -1234,6 +1373,7 @@ body {
                 YES
 
             </button>
+
 
             <button class="btn light"
                     onclick="noButton(this)">
@@ -1251,28 +1391,43 @@ body {
 
 
 <!-- =========================================================
-     PAGE 4 - THREE LITTLE GIFTS
+     PAGE 4
+     THREE LITTLE GIFTS
 ========================================================= -->
 
-<section class="page" id="page4">
+<section class="page gifts-page"
+         id="page4">
 
     <div class="page-number">
         4/12
     </div>
 
-    <span class="heart h1">🩷</span>
-    <span class="heart h2">🩷</span>
-    <span class="heart h3">🤍</span>
+
+    <span class="heart h1">
+        🩷
+    </span>
+
+    <span class="heart h2">
+        🩷
+    </span>
+
+    <span class="heart h3">
+        🤍
+    </span>
+
 
     <div class="page-inner">
+
 
         <div class="script top-script">
             For you, always
         </div>
 
+
         <h1 class="title">
             Three Little Gifts
         </h1>
+
 
         <div class="line"></div>
 
@@ -1280,7 +1435,9 @@ body {
         <div class="cards">
 
 
-            <!-- LETTER -->
+            <!-- =========================
+                 LETTER CARD
+            ========================== -->
 
             <div class="card gift-card"
                  onclick="openGift('letterPopup')">
@@ -1300,10 +1457,13 @@ body {
             </div>
 
 
-            <!-- FRESH ROSES -->
+
+            <!-- =========================
+                 ROSES CARD
+            ========================== -->
 
             <div class="card gift-card"
-                 onclick="openGift('rosePopup')">
+                 onclick="openGift('rosesPopup')">
 
                 <div class="card-icon">
                     💐
@@ -1320,7 +1480,10 @@ body {
             </div>
 
 
-            <!-- SURPRISE -->
+
+            <!-- =========================
+                 SURPRISE CARD
+            ========================== -->
 
             <div class="card gift-card"
                  onclick="openGift('surprisePopup')">
@@ -1343,413 +1506,9 @@ body {
         </div>
 
 
-        <div class="next-area">
-
-            <button class="btn"
-                    onclick="goTo('page5')">
-
-                NEXT
-
-            </button>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     LETTER POPUP
-========================================================= -->
-
-<div class="gift-popup"
-     id="letterPopup">
-
-    <div class="gift-popup-box">
-
-        <button class="popup-close"
-                onclick="closeGift('letterPopup')">
-
-            ×
-
-        </button>
-
-        <div class="popup-icon">
-            💌
-        </div>
-
-        <h2 class="popup-title">
-            A Letter For You
-        </h2>
-
-        <p class="popup-text">
-
-            Happy Birthday to my favorite person ❤️
-            You make my life so much more beautiful
-            just by being in it.
-            I’m so lucky to have you. 🥺💕
-            May you always smile, stay happy,
-            and get everything your heart wishes for.
-            Love you so much! 🫶💗
-
-        </p>
-
-    </div>
-
-</div>
-
-
-
-<!-- =========================================================
-     ROSES POPUP
-========================================================= -->
-
-<div class="gift-popup"
-     id="rosePopup">
-
-    <div class="gift-popup-box">
-
-        <button class="popup-close"
-                onclick="closeGift('rosePopup')">
-
-            ×
-
-        </button>
-
-        <div class="popup-icon">
-            💐
-        </div>
-
-        <h2 class="popup-title">
-            Fresh Roses
-        </h2>
-
-        <p class="popup-text">
-
-            You’re not just my love,
-            you’re my favorite part of every day. ❤️
-
-        </p>
-
-    </div>
-
-</div>
-
-
-
-<!-- =========================================================
-     SURPRISE POPUP
-========================================================= -->
-
-<div class="gift-popup"
-     id="surprisePopup">
-
-    <div class="gift-popup-box">
-
-        <button class="popup-close"
-                onclick="closeGift('surprisePopup')">
-
-            ×
-
-        </button>
-
-        <div class="popup-icon">
-            🎁
-        </div>
-
-        <h2 class="popup-title">
-            A Surprise ❤️
-        </h2>
-
-        <img
-            src="images/photo2.jpg"
-            class="popup-photo"
-            alt=""
-        >
-
-        <p class="popup-text">
-
-            You are my favorite surprise,
-            today and always 🎁🫶
-
-        </p>
-
-    </div>
-
-</div>
-
-
-
-<!-- =========================================================
-     PAGE 5
-========================================================= -->
-
-<section class="page letter-page" id="page5">
-
-    <div class="page-number">
-        5/12
-    </div>
-
-    <div class="page-inner">
-
-        <div class="envelope">
-
-            <div class="envelope-heart">
-                ❤️
-            </div>
-
-        </div>
-
-        <div class="letter-box">
-
-            <p class="letter-text">
-
-                Happy Birthday to my favorite person ❤️
-                You make my life so much more beautiful
-                just by being in it.
-                I’m so lucky to have you. 🥺💕
-                May you always smile, stay happy,
-                and get everything your heart wishes for.
-                Love you so much! 🫶💗
-
-            </p>
-
-        </div>
-
-        <div class="next-area">
-
-            <button class="btn"
-                    onclick="goTo('page6')">
-
-                NEXT
-
-            </button>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     PAGE 6
-========================================================= -->
-
-<section class="page modal-page" id="page6">
-
-    <div class="page-number">
-        6/12
-    </div>
-
-    <div class="page-inner"
-         style="
-         display:flex;
-         align-items:center;
-         ">
-
-        <div class="modal-card">
-
-            <div class="close">
-                ×
-            </div>
-
-            <div class="photo-frame">
-
-                <img
-                    src="images/photo1.jpg"
-                    class="photo-landscape"
-                    alt=""
-                >
-
-            </div>
-
-            <p class="photo-caption">
-
-                You’re not just my love, you’re my
-                favorite part of every day. ❤️
-
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     PAGE 7
-========================================================= -->
-
-<section class="page" id="page7">
-
-    <div class="page-number">
-        7/12
-    </div>
-
-    <span class="heart h1">🩷</span>
-    <span class="heart h2">💕</span>
-    <span class="heart h3">🤍</span>
-
-    <div class="page-inner">
-
-        <div class="cards">
-
-            <div class="card">
-
-                <div class="card-icon">
-                    💌
-                </div>
-
-                <h3>
-                    A Letter
-                </h3>
-
-                <p>
-                    Words from the heart
-                </p>
-
-            </div>
-
-
-            <div class="card">
-
-                <div class="card-icon">
-                    💐
-                </div>
-
-                <h3>
-                    Fresh Roses
-                </h3>
-
-                <p>
-                    A bouquet, just for you
-                </p>
-
-            </div>
-
-
-            <div class="card">
-
-                <div class="card-icon">
-                    🎁
-                </div>
-
-                <h3>
-                    A Surprise
-                </h3>
-
-                <p>
-                    Tied with gold ribbon
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     PAGE 8
-========================================================= -->
-
-<section class="page modal-page" id="page8">
-
-    <div class="page-number">
-        8/12
-    </div>
-
-    <div class="page-inner"
-         style="
-         display:flex;
-         align-items:center;
-         ">
-
-        <div class="single-memory">
-
-            <div class="photo-frame">
-
-                <img
-                    src="images/photo2.jpg"
-                    class="photo-portrait"
-                    alt=""
-                >
-
-            </div>
-
-            <p>
-
-                You are my favorite surprise,
-                today and always 🎁🫶
-
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     PAGE 9
-========================================================= -->
-
-<section class="page" id="page9">
-
-    <div class="page-number">
-        9/12
-    </div>
-
-    <div class="page-inner">
-
-        <div class="cards">
-
-            <div class="card">
-
-                <div class="card-icon">
-                    💐
-                </div>
-
-                <h3>
-                    Fresh Roses
-                </h3>
-
-                <p>
-                    A bouquet, just for you
-                </p>
-
-            </div>
-
-
-            <div class="card">
-
-                <div class="card-icon">
-                    🎁
-                </div>
-
-                <h3>
-                    A Surprise
-                </h3>
-
-                <p>
-                    Tied with gold ribbon
-                </p>
-
-            </div>
-
-        </div>
-
+        <!-- =========================
+             SEE OUR MEMORIES
+        ========================== -->
 
         <div class="next-area">
 
@@ -1762,6 +1521,7 @@ body {
 
         </div>
 
+
     </div>
 
 </section>
@@ -1769,27 +1529,187 @@ body {
 
 
 <!-- =========================================================
-     PAGE 10
+     LETTER POPUP
+     THIS IS THE PAGE 5 DESIGN
 ========================================================= -->
 
-<section class="page memory-page" id="page10">
+<div class="gift-popup"
+     id="letterPopup">
+
+
+    <div class="gift-popup-card letter-popup-card">
+
+
+        <button class="popup-close"
+                onclick="closeGift('letterPopup')"
+                aria-label="Close">
+
+            ×
+
+        </button>
+
+
+        <!-- BIG RED ENVELOPE -->
+
+        <div class="popup-envelope">
+
+            <div class="popup-envelope-heart">
+                ❤️
+            </div>
+
+        </div>
+
+
+        <!-- LETTER -->
+
+        <div class="popup-letter-box">
+
+            <p class="popup-letter-text">
+
+                Happy Birthday to my favorite
+                person ❤️ You make my life so much
+                more beautiful just by being in it.
+                I’m so lucky to have you. 🥺💕
+                May you always smile, stay happy,
+                and get everything your heart
+                wishes for. Love you so much! 🫶💗
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     ROSES POPUP
+     THIS IS THE PAGE 6 DESIGN
+========================================================= -->
+
+<div class="gift-popup"
+     id="rosesPopup">
+
+
+    <div class="gift-popup-card roses-popup-card">
+
+
+        <button class="popup-close"
+                onclick="closeGift('rosesPopup')"
+                aria-label="Close">
+
+            ×
+
+        </button>
+
+
+        <div class="roses-photo-frame">
+
+            <img
+                src="images/photo1.jpg"
+                alt=""
+            >
+
+        </div>
+
+
+        <p class="roses-caption">
+
+            You’re not just my love, you’re my
+            favorite part of every day. ❤️
+
+        </p>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     SURPRISE POPUP
+     THIS IS THE PAGE 8 DESIGN
+========================================================= -->
+
+<div class="gift-popup"
+     id="surprisePopup">
+
+
+    <div class="gift-popup-card surprise-popup-card">
+
+
+        <button class="popup-close"
+                onclick="closeGift('surprisePopup')"
+                aria-label="Close">
+
+            ×
+
+        </button>
+
+
+        <div class="surprise-photo-frame">
+
+            <img
+                src="images/photo2.jpg"
+                alt=""
+            >
+
+        </div>
+
+
+        <p class="surprise-caption">
+
+            You are my favorite surprise, today
+            and always 🎁🫶
+
+        </p>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     PAGE 10
+     OUR MEMORIES
+========================================================= -->
+
+<section class="page memory-page"
+         id="page10">
+
 
     <div class="page-number">
         10/12
     </div>
 
-    <span class="heart h1">🩷</span>
-    <span class="heart h2">❤️</span>
+
+    <span class="heart h1">
+        🩷
+    </span>
+
+    <span class="heart h2">
+        ❤️
+    </span>
+
 
     <div class="page-inner">
+
 
         <div class="script top-script">
             A few favorite moments
         </div>
 
+
         <h1 class="title">
             Our Memories
         </h1>
+
 
         <div class="line"></div>
 
@@ -1797,12 +1717,15 @@ body {
         <div class="memory-grid">
 
 
+            <!-- FIRST MEMORY -->
+
             <div class="memory-card landscape">
 
                 <img
                     src="images/photo3.jpg"
                     alt=""
                 >
+
 
                 <p>
 
@@ -1814,6 +1737,9 @@ body {
             </div>
 
 
+
+            <!-- SECOND MEMORY -->
+
             <div class="memory-card portrait">
 
                 <img
@@ -1826,6 +1752,7 @@ body {
 
         </div>
 
+
     </div>
 
 </section>
@@ -1836,23 +1763,29 @@ body {
      PAGE 11
 ========================================================= -->
 
-<section class="page memory-page" id="page11">
+<section class="page memory-page"
+         id="page11">
+
 
     <div class="page-number">
         11/12
     </div>
 
+
     <div class="page-inner">
+
 
         <div class="memory-grid">
 
 
             <div class="memory-card portrait">
 
+
                 <img
                     src="images/photo4.jpg"
                     alt=""
                 >
+
 
                 <p>
 
@@ -1861,6 +1794,7 @@ body {
                     to smile. ❤️"
 
                 </p>
+
 
             </div>
 
@@ -1879,6 +1813,7 @@ body {
 
         </div>
 
+
     </div>
 
 </section>
@@ -1887,15 +1822,20 @@ body {
 
 <!-- =========================================================
      PAGE 12
+     FINAL RED PAGE
 ========================================================= -->
 
-<section class="page final-page" id="page12">
+<section class="page final-page"
+         id="page12">
+
 
     <div class="page-number">
         12/12
     </div>
 
+
     <div class="final-content">
+
 
         <div class="final-love">
 
@@ -1903,17 +1843,20 @@ body {
 
         </div>
 
+
         <div class="final-birthday">
 
             🎂 Happy Birthday, My love 🎂
 
         </div>
 
+
         <div class="final-message">
 
             Forever grateful that you are in my life.
 
         </div>
+
 
     </div>
 
@@ -1924,20 +1867,24 @@ body {
 <script>
 
 
-/* =========================
-   PAGE NAVIGATION
-========================= */
+/* =========================================================
+   NORMAL PAGE NAVIGATION
+========================================================= */
 
 function goTo(id) {
 
     const element =
         document.getElementById(id);
 
+
     if (element) {
 
         element.scrollIntoView({
+
             behavior: "smooth",
+
             block: "start"
+
         });
 
     }
@@ -1945,56 +1892,87 @@ function goTo(id) {
 }
 
 
-/* =========================
-   GIFT POPUPS
-========================= */
+
+/* =========================================================
+   OPEN GIFT POPUP
+========================================================= */
 
 function openGift(id) {
 
     const popup =
         document.getElementById(id);
 
-    if (popup) {
 
-        popup.classList.add("show");
-
-        document.body.style.overflow =
-            "hidden";
-
+    if (!popup) {
+        return;
     }
+
+
+    /* Close any popup already open */
+
+    document
+        .querySelectorAll(".gift-popup.show")
+        .forEach(function(item) {
+
+            item.classList.remove("show");
+
+        });
+
+
+    /* Open selected popup */
+
+    popup.classList.add("show");
+
+
+    /* Stop Page 4 from scrolling underneath */
+
+    document.body.style.overflow =
+        "hidden";
 
 }
 
+
+
+/* =========================================================
+   CLOSE GIFT POPUP
+========================================================= */
 
 function closeGift(id) {
 
     const popup =
         document.getElementById(id);
 
-    if (popup) {
 
-        popup.classList.remove("show");
-
-        document.body.style.overflow =
-            "";
-
+    if (!popup) {
+        return;
     }
+
+
+    popup.classList.remove("show");
+
+
+    /* Return to normal scrolling */
+
+    document.body.style.overflow =
+        "";
 
 }
 
 
-/* =========================
-   CLOSE WHEN CLICKING
-   OUTSIDE THE POPUP
-========================= */
+
+/* =========================================================
+   CLICK OUTSIDE POPUP TO CLOSE
+========================================================= */
 
 document
     .querySelectorAll(".gift-popup")
     .forEach(function(popup) {
 
+
         popup.addEventListener(
             "click",
             function(event) {
+
 
                 if (
                     event.target === popup
@@ -2007,18 +1985,24 @@ document
             }
         );
 
+
     });
 
 
-/* =========================
-   ESCAPE KEY
-========================= */
+
+/* =========================================================
+   ESCAPE KEY CLOSES POPUP
+========================================================= */
 
 document.addEventListener(
     "keydown",
     function(event) {
 
-        if (event.key === "Escape") {
+
+        if (
+            event.key === "Escape"
+        ) {
+
 
             document
                 .querySelectorAll(
@@ -2026,39 +2010,53 @@ document.addEventListener(
                 )
                 .forEach(function(popup) {
 
-                    closeGift(popup.id);
+
+                    closeGift(
+                        popup.id
+                    );
+
 
                 });
 
+
         }
+
 
     }
 );
 
 
-/* =========================
+
+/* =========================================================
    NO BUTTON
-========================= */
+========================================================= */
 
 function noButton(button) {
+
 
     const messages = [
 
         "Please say YES ❤️",
+
         "Are you sure? ❤️",
+
         "Try again ❤️"
 
     ];
+
 
     let index =
         Number(
             button.dataset.index || 0
         );
 
+
     button.innerText =
         messages[
-            index % messages.length
+            index %
+            messages.length
         ];
+
 
     button.dataset.index =
         index + 1;
@@ -2066,13 +2064,15 @@ function noButton(button) {
 }
 
 
-/* =========================
+
+/* =========================================================
    PREVENT IMAGE DRAGGING
-========================= */
+========================================================= */
 
 document
     .querySelectorAll("img")
     .forEach(function(img) {
+
 
         img.addEventListener(
             "dragstart",
@@ -2083,9 +2083,13 @@ document
             }
         );
 
+
     });
+
 
 </script>
 
+
 </body>
+
 </html>
