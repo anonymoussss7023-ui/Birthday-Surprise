@@ -1,1 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Little Surprise ❤️</title>
 
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Georgia,serif;
+  background:#f8dfe7;
+  color:#633d4b;
+  overflow:hidden;
+}
+
+.page{
+  position:absolute;
+  inset:0;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:25px;
+  background:
+    radial-gradient(circle at 20% 20%,#fff6f8 0 8%,transparent 9%),
+    linear-gradient(135deg,#fce8ed,#f6d1dc);
+  animation:fade .7s ease;
+}
+
+.page.active{
+  display:flex;
+}
+
+.card{
+  width:min(390px,95vw);
+  min-height:600px;
+  padding:35px 25px;
+  border-radius:30px;
+  background:rgba(255,255,255,.55);
+  backdrop-filter:blur(10px);
+  box-shadow:0 15px 45px rgba(120,60,80,.18);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+
+h1{
+  font-size:35px;
+  margin:15px 0;
+}
+
+h2{
+  font-size:26px;
+  margin:15px 0;
+}
+
+p{
+  font-size:17px;
+  line-height:1.7;
+}
+
+button{
+  border:0;
+  border-radius:30px;
+  padding:14px 30px;
+  margin-top:25px;
+  background:#b85c78;
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+  box-shadow:0 8px 20px rgba(120,50,70,.2);
+}
+
+button:hover{
+  transform:scale(1.05);
+}
+
+.heart{
+  font-size:70px;
+  animation:float 2s infinite ease-in-out;
+}
+
+.balloons{
+  font-size:60px;
+  margin:15px;
+}
+
+.photo{
+  width:230px;
+  height:280px;
+  border-radius:25px;
+  object-fit:cover;
+  margin:15px;
+  box-shadow:0 10px 30px rgba(80,40,50,.25);
+  background:#ead0d7;
+}
+
+.gifts{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:15px;
+  width:100%;
+  margin-top:20px;
+}
+
+.gift{
+  padding:18px;
+  background:white;
+  border-radius:20px;
+  cursor:pointer;
+  box-shadow:0 6px 15px rgba(80,40,50,.12);
+  font-size:18px;
+}
+
+.memory-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  width:100%;
+  max-height:400px;
+  overflow:auto;
+}
+
+.memory{
+  background:white;
+  border-radius:18px;
+  padding:10px;
+}
+
+.memory img{
+  width:100%;
+  height:130px;
+  object-fit:cover;
+  border-radius:14px;
+}
+
+.small{
+  font-size:13px;
+  margin-top:5px;
+}
+
+@keyframes fade{
+  from{opacity:0;transform:translateX(25px)}
+  to{opacity:1;transform:translateX(0)}
+}
+
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-15px)}
+}
+
+.rose{
+  font-size:65px;
+}
+
+.hidden-message{
+  display:none;
+  margin-top:20px;
+  background:#fff;
+  padding:20px;
+  border-radius:20px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<section class="page active" id="p1">
+<div class="card">
+  <div class="heart">💗</div>
+  <h1>Hey Birthday Girl...</h1>
+  <p>I made something special for you.</p>
+  <button onclick="next()">TAP TO BEGIN ✨</button>
+</div>
+</section>
+
+<!-- PAGE 2 -->
+<section class="page" id="p2">
+<div class="card">
+  <div class="balloons">🎈🎂🎈</div>
+  <p>A little something for</p>
+  <h1>[HER NAME]</h1>
+  <h2>Happy Birthday! 🎂</h2>
+  <button onclick="next()">NEXT →</button>
+</div>
+</section>
+
+<!-- PAGE 3 -->
+<section class="page" id="p3">
+<div class="card">
+  <div class="heart">🎁</div>
+  <h2>Before we continue...</h2>
+  <p>Please accept my gift 🥺</p>
+
+  <button onclick="next()">YES ❤️</button>
+  <button id="noBtn" onclick="runAway()">NO 😒</button>
+
+  <p id="noText" style="display:none;margin-top:15px;">
+    Nice try 😂 You can't escape!
+  </p>
+</div>
+</section>
+
+<!-- PAGE 4 -->
+<section class="page" id="p4">
+<div class="card">
+  <h1>Three Little Gifts 🎁</h1>
+
+  <div class="gifts">
+    <div class="gift" onclick="showLetter()">💌 A Letter</div>
+    <div class="gift" onclick="showRose()">🌹 Fresh Roses</div>
+    <div class="gift" onclick="next()">🎁 A Surprise</div>
+  </div>
+
+  <div id="extra" class="hidden-message"></div>
+
+  <button onclick="next()">CONTINUE →</button>
+</div>
+</section>
+
+<!-- PAGE 5 -->
+<section class="page" id="p5">
+<div class="card">
+  <div class="heart">💌</div>
+  <h2>A Letter For You</h2>
+
+  <p>
+  Happy Birthday to one of the most special people in my life.
+  I hope this new year brings you happiness, peace, laughter
+  and everything your heart wishes for.
+  <br><br>
+  Never forget how loved and appreciated you are. ❤️
+  </p>
+
+  <button onclick="next()">NEXT →</button>
+</div>
+</section>
+
+<!-- PAGE 6 -->
+<section class="page" id="p6">
+<div class="card">
+  <img class="photo" src="https://placehold.co/460x560/f0d4dc/633d4b?text=YOUR+PHOTO">
+  <h2>One of my favourite memories ❤️</h2>
+  <p>
+  Some people make ordinary moments feel special.
+  You're one of those people.
+  </p>
+  <button onclick="next()">CONTINUE →</button>
+</div>
+</section>
+
+<!-- PAGE 7 -->
+<section class="page" id="p7">
+<div class="card">
+  <h1>Three Little Gifts 💗</h1>
+
+  <div class="gifts">
+    <div class="gift" onclick="alert('A million hugs coming your way 🤗')">
+      💌 A Letter
+    </div>
+
+    <div class="gift" onclick="alert('🌹 These roses are for you!')">
+      🌹 Fresh Roses
+    </div>
+
+    <div class="gift" onclick="next()">
+      🎁 A Surprise
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- PAGE 8 -->
+<section class="page" id="p8">
+<div class="card">
+  <img class="photo" src="https://placehold.co/460x560/e8ccd5/633d4b?text=YOUR+PHOTO">
+  <h2>And here's another thing...</h2>
+  <p>
+  No matter how much time passes,
+  some memories will always stay precious. ❤️
+  </p>
+  <button onclick="next()">CONTINUE →</button>
+</div>
+</section>
+
+<!-- PAGE 9 -->
+<section class="page" id="p9">
+<div class="card">
+  <div class="heart">📸</div>
+  <h1>Our Memories</h1>
+  <p>A tiny collection of moments worth keeping forever.</p>
+  <button onclick="next()">SEE OUR MEMORIES ✨</button>
+</div>
+</section>
+
+<!-- PAGE 10 -->
+<section class="page" id="p10">
+<div class="card">
+  <h2>Our Memories ❤️</h2>
+
+  <div class="memory-grid">
+
+    <div class="memory">
+      <img src="https://placehold.co/400x300/f0d4dc/633d4b?text=PHOTO+1">
+      <p class="small">A beautiful memory ❤️</p>
+    </div>
+
+    <div class="memory">
+      <img src="https://placehold.co/400x300/e8ccd5/633d4b?text=PHOTO+2">
+      <p class="small">One we'll never forget ✨</p>
+    </div>
+
+    <div class="memory">
+      <img src="https://placehold.co/400x300/f4dce3/633d4b?text=PHOTO+3">
+      <p class="small">Good times 💗</p>
+    </div>
+
+    <div class="memory">
+      <img src="https://placehold.co/400x300/efd0da/633d4b?text=PHOTO+4">
+      <p class="small">Forever special 🌸</p>
+    </div>
+
+  </div>
+
+  <button onclick="next()">CONTINUE →</button>
+</div>
+</section>
+
+<!-- PAGE 11 -->
+<section class="page" id="p11">
+<div class="card">
+  <img class="photo" src="https://placehold.co/460x560/f0d4dc/633d4b?text=YOUR+PHOTO">
+
+  <h2>One last thing...</h2>
+
+  <p>
+  I hope when you look back at this,
+  you smile just as much as I smiled while making it. ❤️
+  </p>
+
+  <button onclick="next()">CONTINUE</button>
+</div>
+</section>
+
+<!-- PAGE 12 -->
+<section class="page" id="p12">
+<div class="card">
+  <div class="balloons">🎈🎈🎈</div>
+  <div class="heart">🎂</div>
+
+  <h1>Happy Birthday! ❤️</h1>
+
+  <p>
+  May your 23rd year be filled with
+  happiness, love, success and unforgettable moments.
+  </p>
+
+  <h2>23 looks beautiful on you ✨</h2>
+
+  <button onclick="confetti()">ONE LAST SURPRISE 🎉</button>
+
+  <p id="final" style="display:none;margin-top:20px;font-size:20px;">
+    🎉🎉🎉 HAPPY BIRTHDAYYYYY! 🎉🎉🎉
+  </p>
+</div>
+</section>
+
+<script>
+
+let current=1;
+
+function next(){
+  document.getElementById("p"+current).classList.remove("active");
+  current++;
+
+  if(current>12) current=12;
+
+  document.getElementById("p"+current).classList.add("active");
+}
+
+function runAway(){
+  const btn=document.getElementById("noBtn");
+  btn.style.position="absolute";
+  btn.style.left=Math.random()*70+"%";
+  btn.style.top=Math.random()*70+"%";
+  document.getElementById("noText").style.display="block";
+}
+
+function showLetter(){
+  document.getElementById("extra").style.display="block";
+  document.getElementById("extra").innerHTML=
+  "You deserve all the happiness in the world. 💌";
+}
+
+function showRose(){
+  document.getElementById("extra").style.display="block";
+  document.getElementById("extra").innerHTML=
+  "<div class='rose'>🌹🌹🌹</div>Fresh roses, just for you ❤️";
+}
+
+function confetti(){
+  document.getElementById("final").style.display="block";
+
+  for(let i=0;i<35;i++){
+    const x=document.createElement("div");
+    x.innerHTML=["🎉","💗","✨","🎈","🌸"][Math.floor(Math.random()*5)];
+    x.style.position="fixed";
+    x.style.left=Math.random()*100+"vw";
+    x.style.top="-20px";
+    x.style.fontSize="25px";
+    x.style.animation="fall 3s linear";
+    document.body.appendChild(x);
+
+    setTimeout(()=>x.remove(),3000);
+  }
+}
+
+</script>
+
+<style>
+@keyframes fall{
+  to{
+    transform:translateY(110vh) rotate(720deg);
+  }
+}
+</style>
+
+</body>
+  </html>
