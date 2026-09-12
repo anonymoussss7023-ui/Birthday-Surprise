@@ -2,436 +2,1195 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A Little Surprise ❤️</title>
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0,
+               maximum-scale=1.0, user-scalable=no">
+
+<title>Birthday Surprise</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Great+Vibes&display=swap"
+      rel="stylesheet">
 
 <style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-body{
-  font-family:Georgia,serif;
-  background:#f8dfe7;
-  color:#633d4b;
-  overflow:hidden;
+html {
+    scroll-behavior: smooth;
 }
 
-.page{
-  position:absolute;
-  inset:0;
-  display:none;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:25px;
-  background:
-    radial-gradient(circle at 20% 20%,#fff6f8 0 8%,transparent 9%),
-    linear-gradient(135deg,#fce8ed,#f6d1dc);
-  animation:fade .7s ease;
+body {
+    background: #eee0c9;
+    color: #4d171f;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    overflow-x: hidden;
 }
 
-.page.active{
-  display:flex;
+/* =========================
+   GENERAL PAGE
+========================= */
+
+.page {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 15% 20%, rgba(255,255,255,.35) 0 2px, transparent 3px),
+        radial-gradient(circle at 70% 35%, rgba(219,180,104,.20) 0 3px, transparent 4px),
+        radial-gradient(circle at 35% 75%, rgba(255,255,255,.25) 0 3px, transparent 4px),
+        #f0dfc5;
+    background-size: 150px 150px, 190px 190px, 220px 220px, auto;
 }
 
-.card{
-  width:min(390px,95vw);
-  min-height:600px;
-  padding:35px 25px;
-  border-radius:30px;
-  background:rgba(255,255,255,.55);
-  backdrop-filter:blur(10px);
-  box-shadow:0 15px 45px rgba(120,60,80,.18);
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
+.page-inner {
+    width: min(100%, 600px);
+    min-height: 100vh;
+    margin: auto;
+    position: relative;
+    padding: 55px 28px 70px;
 }
 
-h1{
-  font-size:35px;
-  margin:15px 0;
+/* Decorative floating hearts */
+
+.heart {
+    position: absolute;
+    font-size: 28px;
+    opacity: .65;
+    pointer-events: none;
+    animation: floatHeart 6s ease-in-out infinite;
 }
 
-h2{
-  font-size:26px;
-  margin:15px 0;
+.h1 { top: 12%; left: 12%; }
+.h2 { top: 26%; right: 12%; animation-delay: 1s; }
+.h3 { top: 52%; left: 7%; animation-delay: 2s; }
+.h4 { top: 70%; right: 9%; animation-delay: 3s; }
+.h5 { bottom: 12%; left: 25%; animation-delay: 1.5s; }
+
+@keyframes floatHeart {
+    0%,100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+    50% {
+        transform: translateY(-12px) rotate(5deg);
+    }
 }
 
-p{
-  font-size:17px;
-  line-height:1.7;
+/* =========================
+   TOP LABELS
+========================= */
+
+.script {
+    font-family: "Great Vibes", cursive;
+    font-weight: 400;
 }
 
-button{
-  border:0;
-  border-radius:30px;
-  padding:14px 30px;
-  margin-top:25px;
-  background:#b85c78;
-  color:white;
-  font-size:16px;
-  cursor:pointer;
-  box-shadow:0 8px 20px rgba(120,50,70,.2);
+.top-script {
+    text-align: center;
+    font-size: 25px;
+    color: #8b3c42;
+    margin-bottom: 18px;
 }
 
-button:hover{
-  transform:scale(1.05);
+.title {
+    text-align: center;
+    font-size: clamp(38px, 9vw, 56px);
+    line-height: 1;
+    font-weight: 700;
+    color: #5a1820;
 }
 
-.heart{
-  font-size:70px;
-  animation:float 2s infinite ease-in-out;
+.line {
+    width: 155px;
+    height: 2px;
+    margin: 26px auto 40px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #c5a066,
+        transparent
+    );
 }
 
-.balloons{
-  font-size:60px;
-  margin:15px;
+/* =========================
+   BUTTONS
+========================= */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 165px;
+    min-height: 72px;
+    padding: 12px 28px;
+    border: 2px solid #741827;
+    background: #7c172b;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 19px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    text-decoration: none;
+    position: relative;
+    box-shadow: 0 12px 25px rgba(82,25,31,.22);
+    transition: transform .2s ease, filter .2s ease;
 }
 
-.photo{
-  width:230px;
-  height:280px;
-  border-radius:25px;
-  object-fit:cover;
-  margin:15px;
-  box-shadow:0 10px 30px rgba(80,40,50,.25);
-  background:#ead0d7;
+.btn::before {
+    content: "";
+    position: absolute;
+    inset: 6px;
+    border: 1px solid rgba(255,255,255,.7);
+    pointer-events: none;
 }
 
-.gifts{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:15px;
-  width:100%;
-  margin-top:20px;
+.btn:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.08);
 }
 
-.gift{
-  padding:18px;
-  background:white;
-  border-radius:20px;
-  cursor:pointer;
-  box-shadow:0 6px 15px rgba(80,40,50,.12);
-  font-size:18px;
+.btn.light {
+    background: transparent;
+    color: #641725;
+    box-shadow: none;
 }
 
-.memory-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px;
-  width:100%;
-  max-height:400px;
-  overflow:auto;
+.center {
+    display: flex;
+    justify-content: center;
 }
 
-.memory{
-  background:white;
-  border-radius:18px;
-  padding:10px;
+/* =========================
+   PAGE 2 - CAKE
+========================= */
+
+.cake-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.memory img{
-  width:100%;
-  height:130px;
-  object-fit:cover;
-  border-radius:14px;
+.cake-wrap {
+    width: 100%;
+    text-align: center;
 }
 
-.small{
-  font-size:13px;
-  margin-top:5px;
+.cake {
+    width: 300px;
+    max-width: 85vw;
+    margin: 30px auto 40px;
+    position: relative;
 }
 
-@keyframes fade{
-  from{opacity:0;transform:translateX(25px)}
-  to{opacity:1;transform:translateX(0)}
+.candle {
+    width: 16px;
+    height: 85px;
+    margin: auto;
+    background: repeating-linear-gradient(
+        to bottom,
+        #fff 0 12px,
+        #e9d6a4 12px 20px
+    );
+    position: relative;
+    border-radius: 4px;
 }
 
-@keyframes float{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-15px)}
+.flame {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 38px;
 }
 
-.rose{
-  font-size:65px;
+.cake-top {
+    height: 65px;
+    width: 190px;
+    margin: auto;
+    border-radius: 50% 50% 12px 12px;
+    background: #faf5e9;
+    border-bottom: 7px solid #d8c28d;
+    box-shadow: 0 10px 18px rgba(72,40,30,.16);
 }
 
-.hidden-message{
-  display:none;
-  margin-top:20px;
-  background:#fff;
-  padding:20px;
-  border-radius:20px;
+.cake-mid {
+    width: 250px;
+    height: 85px;
+    margin: -3px auto 0;
+    background: linear-gradient(#efcb82, #d6a94e);
+    border-radius: 12px 12px 3px 3px;
+    box-shadow: 0 14px 22px rgba(72,40,30,.20);
+}
+
+.cake-bottom {
+    width: 300px;
+    height: 100px;
+    margin: -1px auto 0;
+    background: linear-gradient(#a51e39, #690f27);
+    border-radius: 12px 12px 7px 7px;
+    box-shadow: 0 18px 30px rgba(72,20,25,.30);
+    position: relative;
+}
+
+.cake-bottom::before {
+    content: "";
+    position: absolute;
+    top: 9px;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: repeating-linear-gradient(
+        90deg,
+        #d6aa56 0 35px,
+        transparent 35px 65px
+    );
+}
+
+.birthday-text {
+    font-size: 42px;
+    font-weight: 700;
+    color: #681723;
+    margin-bottom: 24px;
+}
+
+/* =========================
+   PAGE 3
+========================= */
+
+.accept-page {
+    text-align: center;
+}
+
+.accept-page .top-script {
+    margin-top: 50px;
+}
+
+.accept-title {
+    font-size: clamp(38px, 9vw, 53px);
+    line-height: 1.05;
+    margin-top: 18px;
+    font-weight: 700;
+}
+
+.big-heart {
+    font-size: 48px;
+    margin: 22px 0 55px;
+}
+
+.choice {
+    display: flex;
+    gap: 26px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* =========================
+   PAGE 4 / 7 / 9 CARDS
+========================= */
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    margin-top: 15px;
+}
+
+.card {
+    background: rgba(255,252,246,.88);
+    border-radius: 9px;
+    min-height: 265px;
+    padding: 38px 22px 30px;
+    text-align: center;
+    box-shadow: 0 18px 32px rgba(91,61,44,.15);
+    border: 1px solid rgba(205,176,128,.25);
+}
+
+.card-icon {
+    font-size: 55px;
+    height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card h3 {
+    font-size: 28px;
+    color: #542029;
+    margin: 18px 0 10px;
+}
+
+.card p {
+    font-family: Arial, sans-serif;
+    color: #856f6d;
+    font-size: 16px;
+}
+
+/* =========================
+   PAGE 5 - LETTER
+========================= */
+
+.letter-page {
+    background: #f8f6ee;
+}
+
+.envelope {
+    width: 350px;
+    max-width: 88vw;
+    height: 285px;
+    margin: 0 auto 40px;
+    background: linear-gradient(145deg, #9b1835, #671126);
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 20px 35px rgba(50,20,20,.28);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.envelope::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-left: 175px solid transparent;
+    border-right: 175px solid transparent;
+    border-top: 105px solid #85162d;
+}
+
+.envelope-heart {
+    position: relative;
+    z-index: 2;
+    font-size: 44px;
+}
+
+.letter-box {
+    background: #faf5ea;
+    border: 2px solid #e3cfac;
+    padding: 75px 28px 60px;
+    margin: auto;
+    box-shadow: 0 8px 20px rgba(81,54,39,.08);
+}
+
+.letter-text {
+    font-size: 30px;
+    line-height: 1.55;
+    font-style: italic;
+    color: #442025;
+}
+
+/* =========================
+   PHOTO PAGES
+========================= */
+
+.photo-card {
+    background: #fffdf7;
+    border-radius: 13px;
+    padding: 30px 18px 42px;
+    width: 100%;
+    max-width: 530px;
+    margin: 40px auto;
+    box-shadow: 0 20px 40px rgba(76,47,43,.22);
+    text-align: center;
+}
+
+.photo-frame {
+    width: 100%;
+    max-width: 440px;
+    margin: auto;
+    background: white;
+    padding: 9px;
+    box-shadow: 0 6px 14px rgba(0,0,0,.12);
+}
+
+.photo-frame img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.photo-landscape {
+    aspect-ratio: 16 / 9;
+}
+
+.photo-portrait {
+    aspect-ratio: 4 / 5;
+}
+
+.photo-caption {
+    font-size: 28px;
+    line-height: 1.35;
+    font-style: italic;
+    font-weight: 600;
+    margin: 28px 15px 0;
+    color: #4a2025;
+}
+
+/* =========================
+   PAGE 6 MODAL STYLE
+========================= */
+
+.modal-page {
+    background:
+        linear-gradient(rgba(92,49,52,.68),rgba(92,49,52,.68)),
+        #9c7675;
+    display: flex;
+    align-items: center;
+}
+
+.modal-card {
+    background: #fffdf8;
+    border-radius: 16px;
+    width: 100%;
+    padding: 80px 30px 60px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(40,20,20,.3);
+}
+
+.close {
+    position: absolute;
+    right: 25px;
+    top: 20px;
+    font-family: Arial,sans-serif;
+    font-size: 44px;
+    font-weight: 200;
+    color: #5b242d;
+}
+
+.modal-card .photo-frame {
+    margin-bottom: 30px;
+}
+
+/* =========================
+   PAGE 8
+========================= */
+
+.single-memory {
+    background: #fffdf8;
+    border-radius: 13px;
+    padding: 70px 28px 45px;
+    max-width: 455px;
+    margin: auto;
+    text-align: center;
+}
+
+.single-memory img {
+    width: 100%;
+    display: block;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+}
+
+.single-memory p {
+    margin-top: 25px;
+    font-size: 27px;
+    line-height: 1.35;
+    font-style: italic;
+}
+
+/* =========================
+   PAGE 10 / 11 MEMORIES
+========================= */
+
+.memory-page {
+    padding-bottom: 90px;
+}
+
+.memory-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.memory-card {
+    background: #fffdf8;
+    padding: 14px 14px 24px;
+    border: 2px solid #d7b77d;
+    box-shadow: 0 15px 25px rgba(76,52,42,.18);
+    text-align: center;
+}
+
+.memory-card img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.memory-card.landscape img {
+    aspect-ratio: 16/9;
+}
+
+.memory-card.portrait img {
+    aspect-ratio: 4/5;
+}
+
+.memory-card p {
+    margin: 18px 12px 0;
+    font-size: 25px;
+    line-height: 1.35;
+    font-style: italic;
+}
+
+/* =========================
+   PAGE 12
+========================= */
+
+.final-page {
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(139,26,48,.35),
+            transparent 65%
+        ),
+        linear-gradient(
+            145deg,
+            #741326,
+            #9c1733,
+            #701022
+        );
+    color: #f8e8cc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.final-content {
+    text-align: center;
+    width: 100%;
+    padding: 30px;
+}
+
+.final-love {
+    font-size: clamp(43px, 11vw, 68px);
+    font-weight: 700;
+    margin-bottom: 42px;
+}
+
+.final-birthday {
+    font-size: clamp(29px, 7vw, 43px);
+    font-weight: 700;
+    margin-bottom: 100px;
+}
+
+.final-message {
+    font-family: "Great Vibes", cursive;
+    font-size: clamp(30px, 7vw, 43px);
+    line-height: 1.3;
+}
+
+/* =========================
+   PAGE NUMBER
+========================= */
+
+.page-number {
+    position: absolute;
+    top: 24px;
+    right: 22px;
+    background: rgba(62,54,55,.75);
+    color: white;
+    padding: 14px 18px;
+    border-radius: 30px;
+    font-family: Arial,sans-serif;
+    font-size: 17px;
+    z-index: 20;
+}
+
+/* =========================
+   NEXT NAV
+========================= */
+
+.next-area {
+    text-align: center;
+    margin: 35px 0 15px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:420px) {
+
+    .page-inner {
+        padding-left: 22px;
+        padding-right: 22px;
+    }
+
+    .title {
+        font-size: 42px;
+    }
+
+    .top-script {
+        font-size: 22px;
+    }
+
+    .card {
+        min-height: 245px;
+    }
+
+    .letter-text {
+        font-size: 26px;
+    }
+
+    .birthday-text {
+        font-size: 36px;
+    }
+
+    .cake {
+        transform: scale(.88);
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+
+    .photo-caption,
+    .single-memory p,
+    .memory-card p {
+        font-size: 23px;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<!-- PAGE 1 -->
-<section class="page active" id="p1">
-<div class="card">
-  <div class="heart">💗</div>
-  <h1>Hey Birthday Girl...</h1>
-  <p>I made something special for you.</p>
-  <button onclick="next()">TAP TO BEGIN ✨</button>
-</div>
+<!-- =========================================================
+     PAGE 1
+     ORIGINAL SCREENSHOT WAS NOT PROVIDED.
+     KEEP THIS AS THE INTRO PAGE UNTIL PAGE 1 IS AVAILABLE.
+========================================================= -->
+
+<section class="page" id="page1">
+    <div class="page-number">1/12</div>
+
+    <div class="page-inner"
+         style="display:flex;align-items:center;justify-content:center;">
+
+        <div style="text-align:center;">
+            <div class="script top-script">
+                A little something for
+            </div>
+
+            <h1 class="title">
+                You
+            </h1>
+
+            <div class="big-heart">
+                ❤️
+            </div>
+
+            <div class="next-area">
+                <button class="btn" onclick="goTo('page2')">
+                    NEXT
+                </button>
+            </div>
+        </div>
+    </div>
 </section>
 
-<!-- PAGE 2 -->
-<section class="page" id="p2">
-<div class="card">
-  <div class="balloons">🎈🎂🎈</div>
-  <p>A little something for</p>
-  <h1>[HER NAME]</h1>
-  <h2>Happy Birthday! 🎂</h2>
-  <button onclick="next()">NEXT →</button>
-</div>
+
+<!-- =========================================================
+     PAGE 2
+========================================================= -->
+
+<section class="page cake-page" id="page2">
+
+    <div class="page-number">2/12</div>
+
+    <span class="heart h1">🩷</span>
+    <span class="heart h2">🤍</span>
+    <span class="heart h3">🩷</span>
+    <span class="heart h4">🩷</span>
+
+    <div class="page-inner cake-wrap">
+
+        <div class="script top-script">
+            A little something for
+        </div>
+
+        <div class="cake">
+
+            <div class="candle">
+                <div class="flame">❤️</div>
+            </div>
+
+            <div class="cake-top"></div>
+            <div class="cake-mid"></div>
+            <div class="cake-bottom"></div>
+
+        </div>
+
+        <div class="birthday-text">
+            Happy Birthday 🎉
+        </div>
+
+        <button class="btn"
+                onclick="goTo('page3')">
+            NEXT
+        </button>
+
+    </div>
 </section>
 
-<!-- PAGE 3 -->
-<section class="page" id="p3">
-<div class="card">
-  <div class="heart">🎁</div>
-  <h2>Before we continue...</h2>
-  <p>Please accept my gift 🥺</p>
 
-  <button onclick="next()">YES ❤️</button>
-  <button id="noBtn" onclick="runAway()">NO 😒</button>
+<!-- =========================================================
+     PAGE 3
+========================================================= -->
 
-  <p id="noText" style="display:none;margin-top:15px;">
-    Nice try 😂 You can't escape!
-  </p>
-</div>
+<section class="page accept-page" id="page3">
+
+    <div class="page-number">3/12</div>
+
+    <span class="heart h1">🩷</span>
+    <span class="heart h2">🤍</span>
+    <span class="heart h3">🩷</span>
+    <span class="heart h4">🩷</span>
+
+    <div class="page-inner">
+
+        <div class="script top-script">
+            Before we continue
+        </div>
+
+        <h1 class="accept-title">
+            Please Accept My Gift
+        </h1>
+
+        <div class="big-heart">
+            ❤️
+        </div>
+
+        <div class="line"></div>
+
+        <div class="choice">
+
+            <button class="btn"
+                    onclick="goTo('page4')">
+                YES
+            </button>
+
+            <button class="btn light"
+                    onclick="noButton(this)">
+                NO
+            </button>
+
+        </div>
+
+    </div>
 </section>
 
-<!-- PAGE 4 -->
-<section class="page" id="p4">
-<div class="card">
-  <h1>Three Little Gifts 🎁</h1>
 
-  <div class="gifts">
-    <div class="gift" onclick="showLetter()">💌 A Letter</div>
-    <div class="gift" onclick="showRose()">🌹 Fresh Roses</div>
-    <div class="gift" onclick="next()">🎁 A Surprise</div>
-  </div>
+<!-- =========================================================
+     PAGE 4
+========================================================= -->
 
-  <div id="extra" class="hidden-message"></div>
+<section class="page" id="page4">
 
-  <button onclick="next()">CONTINUE →</button>
-</div>
+    <div class="page-number">4/12</div>
+
+    <span class="heart h1">🩷</span>
+    <span class="heart h2">🩷</span>
+    <span class="heart h3">🤍</span>
+
+    <div class="page-inner">
+
+        <div class="script top-script">
+            For you, always
+        </div>
+
+        <h1 class="title">
+            Three Little Gifts
+        </h1>
+
+        <div class="line"></div>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="card-icon">💌</div>
+                <h3>A Letter</h3>
+                <p>Words from the heart</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">💐</div>
+                <h3>Fresh Roses</h3>
+                <p>A bouquet, just for you</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🎁</div>
+                <h3>A Surprise</h3>
+                <p>Tied with gold ribbon</p>
+            </div>
+
+        </div>
+
+        <div class="next-area">
+            <button class="btn"
+                    onclick="goTo('page5')">
+                NEXT
+            </button>
+        </div>
+
+    </div>
 </section>
 
-<!-- PAGE 5 -->
-<section class="page" id="p5">
-<div class="card">
-  <div class="heart">💌</div>
-  <h2>A Letter For You</h2>
 
-  <p>
-  Happy Birthday to one of the most special people in my life.
-  I hope this new year brings you happiness, peace, laughter
-  and everything your heart wishes for.
-  <br><br>
-  Never forget how loved and appreciated you are. ❤️
-  </p>
+<!-- =========================================================
+     PAGE 5
+========================================================= -->
 
-  <button onclick="next()">NEXT →</button>
-</div>
+<section class="page letter-page" id="page5">
+
+    <div class="page-number">5/12</div>
+
+    <div class="page-inner">
+
+        <div class="envelope">
+            <div class="envelope-heart">
+                ❤️
+            </div>
+        </div>
+
+        <div class="letter-box">
+
+            <p class="letter-text">
+                Happy Birthday to my favorite person ❤️
+                You make my life so much more beautiful
+                just by being in it.
+                I’m so lucky to have you. 🥺💕
+                May you always smile, stay happy,
+                and get everything your heart wishes for.
+                Love you so much! 🫶💗
+            </p>
+
+        </div>
+
+        <div class="next-area">
+            <button class="btn"
+                    onclick="goTo('page6')">
+                NEXT
+            </button>
+        </div>
+
+    </div>
 </section>
 
-<!-- PAGE 6 -->
-<section class="page" id="p6">
-<div class="card">
-  <img class="photo" src="https://placehold.co/460x560/f0d4dc/633d4b?text=YOUR+PHOTO">
-  <h2>One of my favourite memories ❤️</h2>
-  <p>
-  Some people make ordinary moments feel special.
-  You're one of those people.
-  </p>
-  <button onclick="next()">CONTINUE →</button>
-</div>
+
+<!-- =========================================================
+     PAGE 6
+========================================================= -->
+
+<section class="page modal-page" id="page6">
+
+    <div class="page-number">6/12</div>
+
+    <div class="page-inner"
+         style="display:flex;align-items:center;">
+
+        <div class="modal-card">
+
+            <div class="close">×</div>
+
+            <div class="photo-frame">
+                <img src="images/photo1.jpg"
+                     class="photo-landscape"
+                     alt="">
+            </div>
+
+            <p class="photo-caption">
+                You’re not just my love, you’re my
+                favorite part of every day. ❤️
+            </p>
+
+        </div>
+
+    </div>
 </section>
 
-<!-- PAGE 7 -->
-<section class="page" id="p7">
-<div class="card">
-  <h1>Three Little Gifts 💗</h1>
 
-  <div class="gifts">
-    <div class="gift" onclick="alert('A million hugs coming your way 🤗')">
-      💌 A Letter
+<!-- =========================================================
+     PAGE 7
+========================================================= -->
+
+<section class="page" id="page7">
+
+    <div class="page-number">7/12</div>
+
+    <span class="heart h1">🩷</span>
+    <span class="heart h2">💕</span>
+    <span class="heart h3">🤍</span>
+
+    <div class="page-inner">
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="card-icon">💌</div>
+                <h3>A Letter</h3>
+                <p>Words from the heart</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">💐</div>
+                <h3>Fresh Roses</h3>
+                <p>A bouquet, just for you</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🎁</div>
+                <h3>A Surprise</h3>
+                <p>Tied with gold ribbon</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- =========================================================
+     PAGE 8
+========================================================= -->
+
+<section class="page modal-page" id="page8">
+
+    <div class="page-number">8/12</div>
+
+    <div class="page-inner"
+         style="display:flex;align-items:center;">
+
+        <div class="single-memory">
+
+            <div class="photo-frame">
+                <img src="images/photo2.jpg"
+                     class="photo-portrait"
+                     alt="">
+            </div>
+
+            <p>
+                You are my favorite surprise,
+                today and always 🎁🫶
+            </p>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- =========================================================
+     PAGE 9
+========================================================= -->
+
+<section class="page" id="page9">
+
+    <div class="page-number">9/12</div>
+
+    <div class="page-inner">
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="card-icon">💐</div>
+                <h3>Fresh Roses</h3>
+                <p>A bouquet, just for you</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🎁</div>
+                <h3>A Surprise</h3>
+                <p>Tied with gold ribbon</p>
+            </div>
+
+        </div>
+
+        <div class="next-area">
+
+            <button class="btn"
+                    onclick="goTo('page10')">
+                SEE OUR MEMORIES
+            </button>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- =========================================================
+     PAGE 10
+========================================================= -->
+
+<section class="page memory-page" id="page10">
+
+    <div class="page-number">10/12</div>
+
+    <span class="heart h1">🩷</span>
+    <span class="heart h2">❤️</span>
+
+    <div class="page-inner">
+
+        <div class="script top-script">
+            A few favorite moments
+        </div>
+
+        <h1 class="title">
+            Our Memories
+        </h1>
+
+        <div class="line"></div>
+
+        <div class="memory-grid">
+
+            <div class="memory-card landscape">
+
+                <img src="images/photo3.jpg"
+                     alt="">
+
+                <p>
+                    "You make every ordinary moment
+                    feel unforgettable. ❤️"
+                </p>
+
+            </div>
+
+            <div class="memory-card portrait">
+
+                <img src="images/photo4.jpg"
+                     alt="">
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- =========================================================
+     PAGE 11
+========================================================= -->
+
+<section class="page memory-page" id="page11">
+
+    <div class="page-number">11/12</div>
+
+    <div class="page-inner">
+
+        <div class="memory-grid">
+
+            <div class="memory-card portrait">
+
+                <img src="images/photo4.jpg"
+                     alt="">
+
+                <p>
+                    "If I could gift you one thing
+                    forever, it would be every reason
+                    to smile. ❤️"
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="next-area">
+
+            <button class="btn"
+                    onclick="goTo('page12')">
+                CONTINUE
+            </button>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- =========================================================
+     PAGE 12
+========================================================= -->
+
+<section class="page final-page" id="page12">
+
+    <div class="page-number">12/12</div>
+
+    <div class="final-content">
+
+        <div class="final-love">
+            ❤️ I Love You ❤️
+        </div>
+
+        <div class="final-birthday">
+            🎂 Happy Birthday, My love 🎂
+        </div>
+
+        <div class="final-message">
+            Forever grateful that you are in my life.
+        </div>
+
     </div>
 
-    <div class="gift" onclick="alert('🌹 These roses are for you!')">
-      🌹 Fresh Roses
-    </div>
-
-    <div class="gift" onclick="next()">
-      🎁 A Surprise
-    </div>
-  </div>
-</div>
 </section>
 
-<!-- PAGE 8 -->
-<section class="page" id="p8">
-<div class="card">
-  <img class="photo" src="https://placehold.co/460x560/e8ccd5/633d4b?text=YOUR+PHOTO">
-  <h2>And here's another thing...</h2>
-  <p>
-  No matter how much time passes,
-  some memories will always stay precious. ❤️
-  </p>
-  <button onclick="next()">CONTINUE →</button>
-</div>
-</section>
-
-<!-- PAGE 9 -->
-<section class="page" id="p9">
-<div class="card">
-  <div class="heart">📸</div>
-  <h1>Our Memories</h1>
-  <p>A tiny collection of moments worth keeping forever.</p>
-  <button onclick="next()">SEE OUR MEMORIES ✨</button>
-</div>
-</section>
-
-<!-- PAGE 10 -->
-<section class="page" id="p10">
-<div class="card">
-  <h2>Our Memories ❤️</h2>
-
-  <div class="memory-grid">
-
-    <div class="memory">
-      <img src="https://placehold.co/400x300/f0d4dc/633d4b?text=PHOTO+1">
-      <p class="small">A beautiful memory ❤️</p>
-    </div>
-
-    <div class="memory">
-      <img src="https://placehold.co/400x300/e8ccd5/633d4b?text=PHOTO+2">
-      <p class="small">One we'll never forget ✨</p>
-    </div>
-
-    <div class="memory">
-      <img src="https://placehold.co/400x300/f4dce3/633d4b?text=PHOTO+3">
-      <p class="small">Good times 💗</p>
-    </div>
-
-    <div class="memory">
-      <img src="https://placehold.co/400x300/efd0da/633d4b?text=PHOTO+4">
-      <p class="small">Forever special 🌸</p>
-    </div>
-
-  </div>
-
-  <button onclick="next()">CONTINUE →</button>
-</div>
-</section>
-
-<!-- PAGE 11 -->
-<section class="page" id="p11">
-<div class="card">
-  <img class="photo" src="https://placehold.co/460x560/f0d4dc/633d4b?text=YOUR+PHOTO">
-
-  <h2>One last thing...</h2>
-
-  <p>
-  I hope when you look back at this,
-  you smile just as much as I smiled while making it. ❤️
-  </p>
-
-  <button onclick="next()">CONTINUE</button>
-</div>
-</section>
-
-<!-- PAGE 12 -->
-<section class="page" id="p12">
-<div class="card">
-  <div class="balloons">🎈🎈🎈</div>
-  <div class="heart">🎂</div>
-
-  <h1>Happy Birthday! ❤️</h1>
-
-  <p>
-  May your 23rd year be filled with
-  happiness, love, success and unforgettable moments.
-  </p>
-
-  <h2>23 looks beautiful on you ✨</h2>
-
-  <button onclick="confetti()">ONE LAST SURPRISE 🎉</button>
-
-  <p id="final" style="display:none;margin-top:20px;font-size:20px;">
-    🎉🎉🎉 HAPPY BIRTHDAYYYYY! 🎉🎉🎉
-  </p>
-</div>
-</section>
 
 <script>
 
-let current=1;
+/* =========================
+   PAGE NAVIGATION
+========================= */
 
-function next(){
-  document.getElementById("p"+current).classList.remove("active");
-  current++;
+function goTo(id) {
+    const element = document.getElementById(id);
 
-  if(current>12) current=12;
-
-  document.getElementById("p"+current).classList.add("active");
+    if (element) {
+        element.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    }
 }
 
-function runAway(){
-  const btn=document.getElementById("noBtn");
-  btn.style.position="absolute";
-  btn.style.left=Math.random()*70+"%";
-  btn.style.top=Math.random()*70+"%";
-  document.getElementById("noText").style.display="block";
+
+/* =========================
+   NO BUTTON
+========================= */
+
+function noButton(button) {
+
+    const messages = [
+        "Please say YES ❤️",
+        "Are you sure? ❤️",
+        "Try again ❤️"
+    ];
+
+    let index =
+        Number(button.dataset.index || 0);
+
+    button.innerText =
+        messages[index % messages.length];
+
+    button.dataset.index = index + 1;
 }
 
-function showLetter(){
-  document.getElementById("extra").style.display="block";
-  document.getElementById("extra").innerHTML=
-  "You deserve all the happiness in the world. 💌";
-}
 
-function showRose(){
-  document.getElementById("extra").style.display="block";
-  document.getElementById("extra").innerHTML=
-  "<div class='rose'>🌹🌹🌹</div>Fresh roses, just for you ❤️";
-}
+/* =========================
+   PREVENT IMAGE DRAGGING
+========================= */
 
-function confetti(){
-  document.getElementById("final").style.display="block";
-
-  for(let i=0;i<35;i++){
-    const x=document.createElement("div");
-    x.innerHTML=["🎉","💗","✨","🎈","🌸"][Math.floor(Math.random()*5)];
-    x.style.position="fixed";
-    x.style.left=Math.random()*100+"vw";
-    x.style.top="-20px";
-    x.style.fontSize="25px";
-    x.style.animation="fall 3s linear";
-    document.body.appendChild(x);
-
-    setTimeout(()=>x.remove(),3000);
-  }
-}
+document.querySelectorAll("img").forEach(img => {
+    img.addEventListener("dragstart", e => {
+        e.preventDefault();
+    });
+});
 
 </script>
 
-<style>
-@keyframes fall{
-  to{
-    transform:translateY(110vh) rotate(720deg);
-  }
-}
-</style>
-
 </body>
-  </html>
+</html>
